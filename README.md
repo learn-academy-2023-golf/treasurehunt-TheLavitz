@@ -74,6 +74,8 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
     Branch: loser
 
 - As a user, I cannot continue to play the game after I win or lose.
+    Branch: the-end
+
 - As a user, I can see a message informing me that I lost the game when I run out of turns (the counter reaches zero).
 
 ### 🏔 Stretch Goals

@@ -31,11 +31,17 @@ const App = () => {
       setTimeout(() => {
         alert("You win!")
       }, 1)
+      setTimeout(() => {
+        handleRestart()
+      }, 1)
     } else if(bombLocation === index) {
       updatedBoard[index] = "💥"
       setBoard(updatedBoard)
       setTimeout(() => {
         alert("You lose!")
+      }, 1)
+      setTimeout(() => {
+        handleRestart()
       }, 1)
     } else {    
       updatedBoard[index] = "🌴"
