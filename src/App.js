@@ -29,7 +29,23 @@ const App = () => {
   const handleGamePlay = (index) => {
     // alert(index)
     let updatedBoard = [...board];
-    if (treasureLocation === index) {
+    if (counter === 1) {
+      setTimeout(() => {
+        alert("You ran out of turns.");
+      }, 1);
+      setTimeout(() => {
+        handleRestart();
+      }, 1);
+    } else if (treasureLocation === bombLocation) {
+      updatedBoard = ["🚫", "🚫", "🚫", "🚫", "🚫", "🚫", "🚫", "🚫", "🚫"];
+      setBoard(updatedBoard)
+      setTimeout(() => {
+        alert("PARADOX");
+      }, 1);
+      setTimeout(() => {
+        handleRestart();
+      }, 1);
+    } else if (treasureLocation === index) {
       updatedBoard[index] = "💎";
       setBoard(updatedBoard);
       setTimeout(() => {
@@ -48,22 +64,18 @@ const App = () => {
         handleRestart();
       }, 1);
     } else {
-        updatedBoard[index] = "🌴";
-        setBoard(updatedBoard);
-        setCounter(counter - 1);
+      updatedBoard[index] = "🌴";
+      setBoard(updatedBoard);
+      setCounter(counter - 1);
     }
   };
 
-  const handleCounter = () => {
-    if(counter === 1) {
-      setTimeout(() => {
-        alert("You ran out of turns.");
-      }, 1);
-      setTimeout(() => {
-        handleRestart();
-      }, 1);
+  const handleParadox = () => {
+    while (treasureLocation === bombLocation) {
+      setTreasureLocation(Math.floor(Math.random() * board.length));
+      setbombLocation(Math.floor(Math.random() * board.length));
     }
-  }
+  };
 
   const handleRestart = () => {
     let defaultBoard = ["?", "?", "?", "?", "?", "?", "?", "?", "?"];
@@ -84,7 +96,7 @@ const App = () => {
               key={index}
               index={index}
               handleGamePlay={handleGamePlay}
-              handleCounter={handleCounter}
+              handleParadox={handleParadox}
             />
           );
         })}
