@@ -17,6 +17,7 @@ const App = () => {
 
   const [treasureLocation, setTreasureLocation] = useState(Math.floor(Math.random() * board.length))
   const [bombLocation, setbombLocation] = useState(Math.floor(Math.random() * board.length))
+  const [counter, setCounter] = useState(5)
 
   console.log("treasure:", treasureLocation)
   console.log("bomb:", bombLocation)
@@ -32,7 +33,9 @@ const App = () => {
       setBoard(updatedBoard)
     } else {    
       updatedBoard[index] = "🌴"
-      setBoard(updatedBoard)}
+      setBoard(updatedBoard)
+      setCounter(counter - 1)
+    }
   }
 
   const handleRestart = () => {
@@ -50,6 +53,7 @@ const App = () => {
     setBoard(defaultBoard)
     setTreasureLocation(Math.floor(Math.random() * board.length))
     setbombLocation(Math.floor(Math.random() * board.length))
+    setCounter(5)
   }
 
   return (
@@ -67,6 +71,7 @@ const App = () => {
         )
       })}
       <button onClick={handleRestart}>Play Again</button>
+      <p>Tries Remaing: {counter}</p>
       </div>
     </>
   )
