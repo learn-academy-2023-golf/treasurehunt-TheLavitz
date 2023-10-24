@@ -77,6 +77,7 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
     Branch: the-end
 
 - As a user, I can see a message informing me that I lost the game when I run out of turns (the counter reaches zero).
+    Branch: outta-time
 
 ### 🏔 Stretch Goals
 
