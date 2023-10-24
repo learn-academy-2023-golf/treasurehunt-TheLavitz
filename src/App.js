@@ -35,6 +35,23 @@ const App = () => {
       setBoard(updatedBoard)}
   }
 
+  const handleRestart = () => {
+    let defaultBoard = [
+      "?",
+      "?",
+      "?",
+      "?",
+      "?",
+      "?",
+      "?",
+      "?",
+      "?"
+    ]
+    setBoard(defaultBoard)
+    setTreasureLocation(Math.floor(Math.random() * board.length))
+    setbombLocation(Math.floor(Math.random() * board.length))
+  }
+
   return (
     <>
       <h1>Treasure Hunt Game</h1>
@@ -49,6 +66,7 @@ const App = () => {
           />
         )
       })}
+      <button onClick={handleRestart}>Play Again</button>
       </div>
     </>
   )
