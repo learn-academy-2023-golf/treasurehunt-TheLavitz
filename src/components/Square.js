@@ -4,7 +4,6 @@ const Square = (props) => {
     const handleClick = () => {
       // alert(props.index)
       props.handleGamePlay(props.index)
-      props.handleCounter()
     }
   return (
     <>

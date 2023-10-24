@@ -82,6 +82,7 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
 ### 🏔 Stretch Goals
 
 - Consider how to handle a situation where the bomb and the treasure are at the same index.
+    Branch: paradox
 
 ### 👩‍💻 Developer Stretch Goals
 
