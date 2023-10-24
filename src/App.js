@@ -34,6 +34,9 @@ const App = () => {
     } else if(bombLocation === index) {
       updatedBoard[index] = "💥"
       setBoard(updatedBoard)
+      setTimeout(() => {
+        alert("You lose!")
+      }, 1)
     } else {    
       updatedBoard[index] = "🌴"
       setBoard(updatedBoard)
